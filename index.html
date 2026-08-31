@@ -48,7 +48,9 @@
       padding: 0;
     }
 
-    body {
+    html, body {
+      height: 100vh;
+      overflow: hidden;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       line-height: 1.8;
       background-color: var(--bg-color);
@@ -70,18 +72,19 @@
     header {
       background-color: var(--card-bg);
       border-bottom: 1px solid var(--border-color);
-      position: sticky;
-      top: 0;
+      height: 65px;
+      position: relative;
       z-index: 100;
     }
 
     .nav-container {
       max-width: 1000px;
       margin: 0 auto;
-      padding: 1rem 1.5rem;
+      padding: 0.85rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      height: 100%;
     }
 
     .logo {
@@ -95,7 +98,7 @@
       background: none;
       border: 1px solid var(--border-color);
       color: var(--text-color);
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.9rem;
       border-radius: 20px;
       cursor: pointer;
       font-size: 0.9rem;
@@ -107,24 +110,36 @@
       color: var(--accent-color);
     }
 
+    /* Layout structure with independent scrollable panes */
     .layout {
       max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
+      margin: 0 auto;
+      padding: 1.5rem;
       display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 2.5rem;
+      grid-template-columns: 290px 1fr;
+      gap: 2rem;
+      height: calc(100vh - 65px);
     }
 
     aside {
-      position: sticky;
-      top: 5rem;
-      height: fit-content;
-      max-height: calc(100vh - 6rem);
+      height: 100%;
       overflow-y: auto;
+      overscroll-behavior: contain;
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
+      padding-right: 0.35rem;
+    }
+
+    main {
+      height: 100%;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      background-color: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
     }
 
     .sidebar-card {
@@ -162,6 +177,7 @@
     .resource-list {
       max-height: 240px;
       overflow-y: auto;
+      overscroll-behavior: contain;
       border: 1px solid var(--border-color);
       border-radius: 6px;
       padding: 0.5rem 0.75rem;
@@ -173,14 +189,6 @@
       margin-bottom: 0.4rem;
       font-size: 0.825rem;
       line-height: 1.4;
-    }
-
-    main {
-      background-color: var(--card-bg);
-      padding: 2.5rem;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
-      box-shadow: var(--shadow);
     }
 
     .article-header {
@@ -365,21 +373,28 @@
 
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 1.5rem;
       color: var(--text-color);
       font-size: 0.875rem;
       border-top: 1px solid var(--border-color);
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
 
     @media (max-width: 768px) {
+      html, body {
+        height: auto;
+        overflow: auto;
+      }
       .layout {
         grid-template-columns: 1fr;
+        height: auto;
       }
       aside {
         display: none;
       }
       main {
+        height: auto;
+        overflow-y: visible;
         padding: 1.5rem;
       }
       .article-title {
@@ -463,7 +478,7 @@
       </div>
     </aside>
 
-    <main>
+    <main id="main-content">
       <article>
         <div class="article-header">
           <h1 class="article-title">Artificial Intelligence Explanation for High School Students</h1>
@@ -475,7 +490,7 @@
               <span>🔬 <strong>Strand:</strong> STEM</span>
               <span>✉️ <strong>Email:</strong> <a href="mailto:jariusvladymir@gmail.com">jariusvladymir@gmail.com</a></span>
               <span>📞 <strong>Phone:</strong> <a href="tel:09946369322">0994 636 9322</a></span>
-              <span>📅 <strong>Date Released:</strong> Aug 31 2026</span>
+              <span>📅 <strong>Date Released:</strong> Aug 30 2026</span>
             </div>
           </div>
         </div>
@@ -583,4 +598,299 @@ print(result)</code></pre>
 
         <p>Computer can use vectors to store and manipulate information, such as numerical features or parts of an image.</p>
 
-        <p>Matrices are especially important because very large am
+        <p>Matrices are especially important because very large amounts of data can be represented as tables of numbers.</p>
+
+        <p>For example:</p>
+
+        <div class="math-block">
+          $$A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$$
+        </div>
+
+        <p>Operations on matrices and vectors are widely used in modern machine learning algorithms.</p>
+
+        <h3>Probability and Statistics</h3>
+
+        <p>AI systems deal with uncertainty very often. That is why probability is especially important for them.</p>
+
+        <p>Let us suppose that an AI algorithm analyzes an image and produces the following result:</p>
+
+        <ul>
+          <li>Cat: 90%</li>
+          <li>Dog: 8%</li>
+          <li>Other: 2%</li>
+        </ul>
+
+        <p>The AI algorithm is trying to express its confidence in different possibilities.</p>
+
+        <p>Statistics is also used in AI by researchers to understand data, find patterns, measure performance of machine learning models and evaluate models in other ways.</p>
+
+        <p>Key concepts of statistics include:</p>
+
+        <ul>
+          <li>Mean</li>
+          <li>Median</li>
+          <li>Standard deviation</li>
+          <li>Probability</li>
+          <li>Distributions</li>
+          <li>Correlation</li>
+          <li>Sampling</li>
+        </ul>
+
+        <h3>Basic Calculus</h3>
+
+        <p>Calculus is also very important because AI models often minimize errors during their training.</p>
+
+        <p>One of the key concepts in calculus is derivative. Derivative tells us how fast the function changes.</p>
+
+        <p>For example, if:</p>
+
+        <div class="math-block">
+          $$y = x^2$$
+        </div>
+
+        <p>Then:</p>
+
+        <div class="math-block">
+          $$\frac{dy}{dx} = 2x$$
+        </div>
+
+        <p>In machine learning, derivatives are used to understand how changing the parameters of the model influences its error.</p>
+
+        <p>This idea leads us to the technique called gradient descent. It is one of the fundamental techniques used to train machine learning models.</p>
+
+        <p>So, mathematics is not only a school discipline. It provides many of the instruments used to build AI.</p>
+
+        <hr>
+
+        <h2 id="section-5">5. Machine Learning</h2>
+
+        <img src="1_rbaxTrB_CZCqbty_zv2bEg.png" alt="Machine Learning Workflow Taxonomy" class="blog-img">
+
+        <p>Machine Learning (ML) is a branch of Artificial Intelligence.</p>
+
+        <p>Instead of hard-coding all the rules, machine learning systems are able to learn patterns from data.</p>
+
+        <p>Try to code the rules to recognize each possible cat image:</p>
+
+        <blockquote>«"If the animal has two ears, four legs, whiskers, a certain eye shape and..."»</blockquote>
+
+        <p>It is going to be very complicated. That is why instead of hard-coding we can use machine learning algorithm:</p>
+
+        <blockquote>Examples -&gt; Learning Algorithm -&gt; Trained Model -&gt; Prediction</blockquote>
+
+        <p>There are several main categories of machine learning.</p>
+
+        <h4>Supervised Learning</h4>
+
+        <p>The model learns from labeled examples.</p>
+
+        <p>Example:</p>
+
+        <p>Image -&gt; Label</p>
+
+        <p>Cat image -&gt; "Cat"</p>
+
+        <p>Dog image -&gt; "Dog"</p>
+
+        <h4>Unsupervised Learning</h4>
+
+        <p>The model tries to find patterns or clusters in data without having correct labels.</p>
+
+        <h4>Reinforcement Learning</h4>
+
+        <p>An AI system learns by interacting with the environment and receiving rewards and punishments.</p>
+
+        <p>This approach can be used in gaming and robotics.</p>
+
+        <hr>
+
+        <h2 id="section-6">6. Deep Learning</h2>
+
+        <img src="deep-learning-neural-networks-multiple-layers.1.2.jpg" alt="Deep Neural Network Diagram" class="blog-img">
+
+        <p>Deep Learning is a specialized branch of machine learning. It uses artificial neural networks with many layers.</p>
+
+        <p>Neural network can be represented in a simplified form as:</p>
+
+        <blockquote>Input -&gt; Hidden Layers -&gt; Output</blockquote>
+
+        <p>For example, in the case of an image recognition system, the system receives an image as an input and gradually analyzes numerical representation of its features before producing an output.</p>
+
+        <p>Deep learning became especially powerful because modern systems can train on huge datasets using powerful hardware.</p>
+
+        <p>Deep learning powers a lot of technologies related to:</p>
+
+        <ul>
+          <li>Computer vision</li>
+          <li>Speech recognition</li>
+          <li>Natural language processing</li>
+          <li>Generative AI</li>
+          <li>Autonomous systems</li>
+        </ul>
+
+        <p>Generative AI uses neural network architecture with millions of learned parameters.</p>
+
+        <hr>
+
+        <h2 id="section-7">7. State-of-the-Art AI and Frameworks</h2>
+
+        <p>AI continues to develop at a very rapid pace.</p>
+
+        <p>Modern AI systems include large language models, multimodal models, generative AI, computer vision systems, robotics models, AI agents and others.</p>
+
+        <p>Some modern AI systems are able to work with several types of data simultaneously, such as:</p>
+
+        <blockquote>Text + Images + Audio + Video</blockquote>
+
+        <p>AI developers use special software frameworks and libraries to build these systems.</p>
+
+        <p>Examples of these frameworks and libraries include:</p>
+
+        <ul>
+          <li>PyTorch</li>
+          <li>TensorFlow</li>
+          <li>Keras</li>
+          <li>scikit-learn</li>
+        </ul>
+
+        <p>They provide developers with building blocks to build, train, test and deploy machine learning models.</p>
+
+        <p>State-of-the-art AI is not only about creating the biggest model. The researchers also pay attention to:</p>
+
+        <ul>
+          <li>Accuracy</li>
+          <li>Efficiency</li>
+          <li>Reliability</li>
+          <li>Safety</li>
+          <li>Reasoning ability</li>
+          <li>Cost</li>
+          <li>Energy consumption</li>
+          <li>Ability to work with different types of data</li>
+        </ul>
+
+        <p>So, AI research is a mix of computer science, mathematics, engineering and science experiments.</p>
+
+        <hr>
+
+        <h2 id="section-8">8. Real-World Applications of Artificial Intelligence</h2>
+
+        <img src="ai-applications.png" alt="Real World Applications of AI Collage" class="blog-img">
+
+        <p>Artificial Intelligence is used in many fields of our society now.</p>
+
+        <div class="grid-cards">
+          <div class="card">
+            <h4>🏥 Healthcare</h4>
+            <p>AI systems can help in analyzing medical images, working with researchers and clinical decision-making.</p>
+          </div>
+          <div class="card">
+            <h4>🚗 Transportation</h4>
+            <p>AI systems can be used for navigation, traffic prediction, assistance to drivers and autonomous cars.</p>
+          </div>
+          <div class="card">
+            <h4>🎮 Gaming</h4>
+            <p>AI is responsible for behavior of non-player characters, adaptive difficulty and detection of cheating in games.</p>
+            <p>AI can help developers to create game content.</p>
+          </div>
+          <div class="card">
+            <h4>📱 Smartphones</h4>
+            <p>AI provides the functionality of voice assistants, camera processing, facial recognition, translations and text predictions.</p>
+          </div>
+          <div class="card">
+            <h4>🎬 Entertainment</h4>
+            <p>AI systems of streaming services make movie and show recommendations based on user's behavior.</p>
+          </div>
+          <div class="card">
+            <h4>💰 Finance</h4>
+            <p>AI can help in detecting abnormal transactions, analyzing financial data and automating different processes.</p>
+          </div>
+          <div class="card">
+            <h4>🌾 Agriculture</h4>
+            <p>AI can help in analyzing crops, detecting diseases of plants and monitoring farms.</p>
+          </div>
+          <div class="card">
+            <h4>🎓 Education</h4>
+            <p>AI can personalize the learning experience for students, generate practice questions and explain concepts to them.</p>
+          </div>
+        </div>
+
+        <hr>
+
+        <h2 id="section-9">9. Conclusion</h2>
+
+        <p>Artificial Intelligence may seem very complicated, but its basics can be connected to the concepts that can be encountered by high school students.</p>
+
+        <p>Programming gives the instructions and the tools.</p>
+
+        <p>Mathematics gives the language and methods for representation and optimization of models.</p>
+
+        <p>Machine learning enables computers to learn from data.</p>
+
+        <p>Deep learning uses neural networks with many layers to solve more and more complicated problems.</p>
+
+        <p>And state-of-the-art AI combines these concepts with huge amounts of data, powerful computing resources and advanced algorithms.</p>
+
+        <p>It does not mean that you need to become an AI expert immediately. A high school student can start from basics:</p>
+
+        <blockquote>Learn Mathematics -&gt; Learn Python -&gt; Learn About Data -&gt; Learn Machine Learning -&gt; Learn Deep Learning -&gt; AI Projects</blockquote>
+
+        <p>Artificial Intelligence is not only a technology of the future. It is already a part of our present, and students understanding basics of AI can become the shapers of its future.</p>
+
+        <footer>
+          <p>&copy; 2026 AI Learning Hub by Jarius Vladymir M. De Leon. Built for educational purposes.</p>
+        </footer>
+      </article>
+    </main>
+  </div>
+
+  <script>
+    // Theme Switcher Logic
+    const toggleBtn = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      if (currentTheme === 'dark') {
+        toggleBtn.textContent = '☀️ Light Mode';
+      }
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      let theme = document.documentElement.getAttribute('data-theme');
+      if (theme === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        toggleBtn.textContent = '🌙 Dark Mode';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.textContent = '☀️ Light Mode';
+      }
+    });
+
+    // Scroll Reading Progress Bar based on main content pane
+    const mainContent = document.getElementById('main-content');
+    mainContent.addEventListener('scroll', () => {
+      const winScroll = mainContent.scrollTop;
+      const height = mainContent.scrollHeight - mainContent.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progress-bar').style.width = scrolled + '%';
+    });
+
+    // Copy Link Logic
+    const copyBtn = document.getElementById('copy-link-btn');
+    const copyAlert = document.getElementById('copy-alert');
+
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        copyAlert.style.display = 'block';
+        setTimeout(() => {
+          copyAlert.style.display = 'none';
+        }, 3000);
+      }).catch(err => {
+        alert("Failed to copy link");
+      });
+    });
+  </script>
+</body>
+</html>
