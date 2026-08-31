@@ -72,15 +72,16 @@
     header {
       background-color: var(--card-bg);
       border-bottom: 1px solid var(--border-color);
-      height: 65px;
+      height: 60px;
       position: relative;
       z-index: 100;
     }
 
     .nav-container {
-      max-width: 1000px;
+      max-width: 1400px;
+      width: 95%;
       margin: 0 auto;
-      padding: 0.85rem 1.5rem;
+      padding: 0.5rem 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -98,10 +99,10 @@
       background: none;
       border: 1px solid var(--border-color);
       color: var(--text-color);
-      padding: 0.4rem 0.9rem;
+      padding: 0.35rem 0.85rem;
       border-radius: 20px;
       cursor: pointer;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       transition: all 0.2s;
     }
 
@@ -110,15 +111,16 @@
       color: var(--accent-color);
     }
 
-    /* Layout structure with independent scrollable panes */
+    /* Base Grid Layout (Landscape / Desktop) */
     .layout {
-      max-width: 1000px;
+      max-width: 1400px;
+      width: 95%;
       margin: 0 auto;
-      padding: 1.5rem;
+      padding: 0.75rem 1rem 1rem;
       display: grid;
-      grid-template-columns: 290px 1fr;
-      gap: 2rem;
-      height: calc(100vh - 65px);
+      grid-template-columns: 300px 1fr;
+      gap: 1.5rem;
+      height: calc(100vh - 60px);
     }
 
     aside {
@@ -127,7 +129,7 @@
       overscroll-behavior: contain;
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
+      gap: 1rem;
       padding-right: 0.35rem;
     }
 
@@ -136,7 +138,7 @@
       overflow-y: auto;
       overscroll-behavior: contain;
       background-color: var(--card-bg);
-      padding: 2.5rem;
+      padding: 2rem;
       border-radius: 8px;
       border: 1px solid var(--border-color);
       box-shadow: var(--shadow);
@@ -144,15 +146,15 @@
 
     .sidebar-card {
       background: var(--card-bg);
-      padding: 1.25rem;
+      padding: 1rem 1.25rem;
       border-radius: 8px;
       border: 1px solid var(--border-color);
       font-size: 0.9rem;
     }
 
     .sidebar-card h3, .sidebar-card h4 {
-      font-size: 1rem;
-      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
       color: var(--heading-color);
     }
 
@@ -161,7 +163,7 @@
     }
 
     .sidebar-card li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .sidebar-card a {
@@ -175,33 +177,33 @@
     }
 
     .resource-list {
-      max-height: 240px;
+      max-height: 250px;
       overflow-y: auto;
       overscroll-behavior: contain;
       border: 1px solid var(--border-color);
       border-radius: 6px;
       padding: 0.5rem 0.75rem;
       background: var(--bg-color);
-      margin-top: 0.5rem;
+      margin-top: 0.4rem;
     }
 
     .resource-list li {
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
       font-size: 0.825rem;
       line-height: 1.4;
     }
 
     .article-header {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       border-bottom: 1px solid var(--border-color);
-      padding-bottom: 1.5rem;
+      padding-bottom: 1.25rem;
     }
 
     .article-title {
       font-size: 2.25rem;
       color: var(--heading-color);
       line-height: 1.25;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .article-subtitle {
@@ -212,7 +214,7 @@
     }
 
     .article-meta {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--text-color);
       line-height: 1.6;
     }
@@ -220,7 +222,7 @@
     .author-details {
       display: flex;
       flex-direction: column;
-      gap: 0.35rem;
+      gap: 0.25rem;
     }
 
     .author-details a {
@@ -234,7 +236,8 @@
 
     .blog-img {
       width: 100%;
-      height: auto;
+      max-height: 480px;
+      object-fit: cover;
       border-radius: 8px;
       border: 1px solid var(--border-color);
       margin: 1.5rem 0;
@@ -242,7 +245,7 @@
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       color: var(--heading-color);
       margin: 2rem 0 1rem;
       padding-bottom: 0.25rem;
@@ -250,7 +253,7 @@
     }
 
     h3 {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: var(--heading-color);
       margin: 1.5rem 0 0.75rem;
     }
@@ -333,17 +336,17 @@
     .share-buttons {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
 
     .share-btn {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
       color: var(--text-color);
-      padding: 0.5rem 1rem;
+      padding: 0.45rem 0.85rem;
       border-radius: 6px;
       cursor: pointer;
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
@@ -380,25 +383,50 @@
       margin-top: 2rem;
     }
 
-    @media (max-width: 768px) {
+    /* Auto-adjusting portrait layout with sidebar staying on the LEFT side */
+    @media (max-width: 850px), (orientation: portrait) {
       html, body {
-        height: auto;
-        overflow: auto;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .layout, .nav-container {
+        width: 100%;
+        max-width: 100%;
       }
       .layout {
-        grid-template-columns: 1fr;
-        height: auto;
+        display: grid;
+        grid-template-columns: minmax(150px, 220px) 1fr; /* Maintains left sidebar in portrait */
+        gap: 0.75rem;
+        height: calc(100vh - 60px);
+        padding: 0.5rem 0.25rem;
       }
       aside {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding-right: 0.25rem;
       }
       main {
-        height: auto;
-        overflow-y: visible;
-        padding: 1.5rem;
+        height: 100%;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding: 1rem;
+      }
+      .sidebar-card {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.8rem;
+      }
+      .sidebar-card h3, .sidebar-card h4 {
+        font-size: 0.85rem;
+      }
+      .share-btn {
+        padding: 0.35rem 0.5rem;
+        font-size: 0.75rem;
       }
       .article-title {
-        font-size: 1.75rem;
+        font-size: 1.4rem;
       }
       .grid-cards {
         grid-template-columns: 1fr;
@@ -489,7 +517,6 @@
               <span>🏫 <strong>Grade Level:</strong> 11-Caballero</span>
               <span>🔬 <strong>Strand:</strong> STEM</span>
               <span>✉️ <strong>Email:</strong> <a href="mailto:jariusvladymir@gmail.com">jariusvladymir@gmail.com</a></span>
-              <span>📞 <strong>Phone:</strong> <a href="tel:09946369322">0994 636 9322</a></span>
               <span>📅 <strong>Date Released:</strong> Aug 30 2026</span>
             </div>
           </div>
@@ -868,14 +895,16 @@ print(result)</code></pre>
       }
     });
 
-    // Scroll Reading Progress Bar based on main content pane
+    // Scroll Reading Progress Bar calculation
     const mainContent = document.getElementById('main-content');
-    mainContent.addEventListener('scroll', () => {
+    const updateProgress = () => {
       const winScroll = mainContent.scrollTop;
       const height = mainContent.scrollHeight - mainContent.clientHeight;
       const scrolled = (winScroll / height) * 100;
       document.getElementById('progress-bar').style.width = scrolled + '%';
-    });
+    };
+
+    mainContent.addEventListener('scroll', updateProgress);
 
     // Copy Link Logic
     const copyBtn = document.getElementById('copy-link-btn');
