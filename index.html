@@ -112,7 +112,7 @@
       margin: 2rem auto;
       padding: 0 1.5rem;
       display: grid;
-      grid-template-columns: 260px 1fr;
+      grid-template-columns: 280px 1fr;
       gap: 2.5rem;
     }
 
@@ -127,36 +127,52 @@
       gap: 1.25rem;
     }
 
-    .toc-card {
+    .sidebar-card {
       background: var(--card-bg);
       padding: 1.25rem;
       border-radius: 8px;
       border: 1px solid var(--border-color);
+      font-size: 0.9rem;
     }
 
-    .toc-card h3 {
+    .sidebar-card h3, .sidebar-card h4 {
       font-size: 1rem;
       margin-bottom: 0.75rem;
       color: var(--heading-color);
     }
 
-    .toc-card ul {
+    .sidebar-card ul {
       list-style: none;
     }
 
-    .toc-card li {
+    .sidebar-card li {
       margin-bottom: 0.5rem;
     }
 
-    .toc-card a {
-      color: var(--text-color);
+    .sidebar-card a {
+      color: var(--accent-color);
       text-decoration: none;
-      font-size: 0.875rem;
       transition: color 0.2s;
     }
 
-    .toc-card a:hover {
-      color: var(--accent-color);
+    .sidebar-card a:hover {
+      text-decoration: underline;
+    }
+
+    .resource-list {
+      max-height: 240px;
+      overflow-y: auto;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 0.5rem 0.75rem;
+      background: var(--bg-color);
+      margin-top: 0.5rem;
+    }
+
+    .resource-list li {
+      margin-bottom: 0.4rem;
+      font-size: 0.825rem;
+      line-height: 1.4;
     }
 
     main {
@@ -190,17 +206,22 @@
     .article-meta {
       font-size: 0.9rem;
       color: var(--text-color);
-      opacity: 0.85;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem 2.5rem;
-      align-items: flex-start;
+      line-height: 1.6;
     }
 
     .author-details {
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
+      gap: 0.35rem;
+    }
+
+    .author-details a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    .author-details a:hover {
+      text-decoration: underline;
     }
 
     .blog-img {
@@ -301,18 +322,6 @@
       margin-bottom: 0;
     }
 
-    .share-section {
-      background: var(--quote-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 1.25rem;
-    }
-
-    .share-section h4 {
-      margin-top: 0;
-      margin-bottom: 0.75rem;
-    }
-
     .share-buttons {
       display: flex;
       flex-direction: column;
@@ -395,7 +404,7 @@
 
   <div class="layout">
     <aside>
-      <div class="toc-card">
+      <div class="sidebar-card">
         <h3>Table of Contents</h3>
         <ul>
           <li><a href="#section-1">1. What is AI?</a></li>
@@ -410,7 +419,7 @@
         </ul>
       </div>
 
-      <div class="share-section">
+      <div class="sidebar-card">
         <h4>Share This Blog:</h4>
         <div class="share-buttons">
           <a class="share-btn" href="https://twitter.com/intent/tweet?text=Check%20out%20this%20blog%20on%20AI%20for%20High%20School%20Students!" target="_blank" rel="noopener">🌐 Twitter / X</a>
@@ -419,6 +428,38 @@
           <button class="share-btn" id="copy-link-btn">🔗 Copy Link</button>
         </div>
         <div class="copy-alert" id="copy-alert">✓ Link copied to clipboard!</div>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>Learn More About Artificial Intelligence:</h4>
+        <p style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem;">Free Full Artificial Intelligence Courses:</p>
+        <ul class="resource-list">
+          <li><a href="https://www.elementsofai.com/" target="_blank" rel="noopener">Elements of AI</a></li>
+          <li><a href="https://buildingai.elementsofai.com/" target="_blank" rel="noopener">Building AI</a></li>
+          <li><a href="https://www.helsinki.fi/en/admissions-and-education/open-university/multidisciplinary-themed-modules/" target="_blank" rel="noopener">AI in Society</a></li>
+          <li><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" target="_blank" rel="noopener">18.01SC Single Variable Calculus</a></li>
+          <li><a href="https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/" target="_blank" rel="noopener">18.02SC Multivariable Calculus</a></li>
+          <li><a href="https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/" target="_blank" rel="noopener">18.06SC Linear Algebra</a></li>
+          <li><a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" target="_blank" rel="noopener">18.05 Introduction to Probability and Statistics</a></li>
+          <li><a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" target="_blank" rel="noopener">18.03SC Differential Equations</a></li>
+          <li><a href="https://ocw.mit.edu/courses/18-200-principles-of-discrete-applied-mathematics-spring-2024/" target="_blank" rel="noopener">18.200 Principles of Discrete Applied Mathematics</a></li>
+          <li><a href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/" target="_blank" rel="noopener">18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning</a></li>
+          <li><a href="https://cs50.harvard.edu/python/" target="_blank" rel="noopener">CS50's Introduction to Programming with Python</a></li>
+          <li><a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener">CS50's Introduction to Computer Science</a></li>
+          <li><a href="https://cs50.harvard.edu/web/" target="_blank" rel="noopener">CS50's Web Programming with Python and JavaScript</a></li>
+          <li><a href="https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/" target="_blank" rel="noopener">6.034 Artificial Intelligence</a></li>
+          <li><a href="https://ocw.mit.edu/courses/6-036-introduction-to-machine-learning-fall-2020/" target="_blank" rel="noopener">6.036 Introduction to Machine Learning</a></li>
+          <li><a href="https://introtodeeplearning.com/" target="_blank" rel="noopener">6.S191 Introduction to Deep Learning</a></li>
+          <li><a href="https://ocw.mit.edu/courses/6-7960-deep-learning-fall-2024/" target="_blank" rel="noopener">6.7960 Deep Learning</a></li>
+          <li><a href="https://web.stanford.edu/class/cs221/" target="_blank" rel="noopener">CS221 Artificial Intelligence: Principles and Techniques</a></li>
+          <li><a href="https://cs229.stanford.edu/" target="_blank" rel="noopener">CS229 Machine Learning</a></li>
+          <li><a href="https://cs231n.stanford.edu/" target="_blank" rel="noopener">CS231N Deep Learning for Computer Vision</a></li>
+          <li><a href="https://web.stanford.edu/class/cs224n/?utm_source" target="_blank" rel="noopener">CS224N Natural Language Processing with Deep Learning</a></li>
+          <li><a href="https://ocw.mit.edu/courses/18-657-mathematics-of-machine-learning-fall-2015/" target="_blank" rel="noopener">18.657 Mathematics of Machine Learning</a></li>
+          <li><a href="https://ocw.mit.edu/courses/18-700-linear-algebra-fall-2013/" target="_blank" rel="noopener">18.700 Linear Algebra</a></li>
+          <li><a href="https://ocw.mit.edu/courses/18-100c-real-analysis-fall-2012/" target="_blank" rel="noopener">18.100C Real Analysis</a></li>
+        </ul>
+        <p style="font-size: 0.75rem; opacity: 0.8; margin-top: 0.5rem; margin-bottom: 0;"><em>Credit to MIT, Harvard, Stanford and Helsinki</em></p>
       </div>
     </aside>
 
@@ -429,11 +470,13 @@
           <div class="article-subtitle">From Python and Mathematics to Machine Learning and Practical AI</div>
           <div class="article-meta">
             <div class="author-details">
-              <span>✍️ <strong>Blog By Jarius Vladymir M. De Leon</strong></span>
-              <span>🏫 <strong>Grade Level: 11-Caballero</strong></span>
-              <span>🔬 <strong>Strand: STEM</strong></span>
+              <span>✍️ <strong>Blog by:</strong> Jarius Vladymir M. De Leon</span>
+              <span>🏫 <strong>Grade Level:</strong> 11-Caballero</span>
+              <span>🔬 <strong>Strand:</strong> STEM</span>
+              <span>✉️ <strong>Email:</strong> <a href="mailto:jariusvladymir@gmail.com">jariusvladymir@gmail.com</a></span>
+              <span>📞 <strong>Phone:</strong> <a href="tel:09946369322">0994 636 9322</a></span>
+              <span>📅 <strong>Date Released:</strong> Aug 31 2026</span>
             </div>
-            <span>📅 <strong>Date Released: Aug 30 2026</strong></span>
           </div>
         </div>
 
@@ -540,298 +583,4 @@ print(result)</code></pre>
 
         <p>Computer can use vectors to store and manipulate information, such as numerical features or parts of an image.</p>
 
-        <p>Matrices are especially important because very large amounts of data can be represented as tables of numbers.</p>
-
-        <p>For example:</p>
-
-        <div class="math-block">
-          $$A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$$
-        </div>
-
-        <p>Operations on matrices and vectors are widely used in modern machine learning algorithms.</p>
-
-        <h3>Probability and Statistics</h3>
-
-        <p>AI systems deal with uncertainty very often. That is why probability is especially important for them.</p>
-
-        <p>Let us suppose that an AI algorithm analyzes an image and produces the following result:</p>
-
-        <ul>
-          <li>Cat: 90%</li>
-          <li>Dog: 8%</li>
-          <li>Other: 2%</li>
-        </ul>
-
-        <p>The AI algorithm is trying to express its confidence in different possibilities.</p>
-
-        <p>Statistics is also used in AI by researchers to understand data, find patterns, measure performance of machine learning models and evaluate models in other ways.</p>
-
-        <p>Key concepts of statistics include:</p>
-
-        <ul>
-          <li>Mean</li>
-          <li>Median</li>
-          <li>Standard deviation</li>
-          <li>Probability</li>
-          <li>Distributions</li>
-          <li>Correlation</li>
-          <li>Sampling</li>
-        </ul>
-
-        <h3>Basic Calculus</h3>
-
-        <p>Calculus is also very important because AI models often minimize errors during their training.</p>
-
-        <p>One of the key concepts in calculus is derivative. Derivative tells us how fast the function changes.</p>
-
-        <p>For example, if:</p>
-
-        <div class="math-block">
-          $$y = x^2$$
-        </div>
-
-        <p>Then:</p>
-
-        <div class="math-block">
-          $$\frac{dy}{dx} = 2x$$
-        </div>
-
-        <p>In machine learning, derivatives are used to understand how changing the parameters of the model influences its error.</p>
-
-        <p>This idea leads us to the technique called gradient descent. It is one of the fundamental techniques used to train machine learning models.</p>
-
-        <p>So, mathematics is not only a school discipline. It provides many of the instruments used to build AI.</p>
-
-        <hr>
-
-        <h2 id="section-5">5. Machine Learning</h2>
-
-        <img src="1_rbaxTrB_CZCqbty_zv2bEg.png" alt="Machine Learning Workflow Taxonomy" class="blog-img">
-
-        <p>Machine Learning (ML) is a branch of Artificial Intelligence.</p>
-
-        <p>Instead of hard-coding all the rules, machine learning systems are able to learn patterns from data.</p>
-
-        <p>Try to code the rules to recognize each possible cat image:</p>
-
-        <blockquote>«"If the animal has two ears, four legs, whiskers, a certain eye shape and..."»</blockquote>
-
-        <p>It is going to be very complicated. That is why instead of hard-coding we can use machine learning algorithm:</p>
-
-        <blockquote>Examples -&gt; Learning Algorithm -&gt; Trained Model -&gt; Prediction</blockquote>
-
-        <p>There are several main categories of machine learning.</p>
-
-        <h4>Supervised Learning</h4>
-
-        <p>The model learns from labeled examples.</p>
-
-        <p>Example:</p>
-
-        <p>Image -&gt; Label</p>
-
-        <p>Cat image -&gt; "Cat"</p>
-
-        <p>Dog image -&gt; "Dog"</p>
-
-        <h4>Unsupervised Learning</h4>
-
-        <p>The model tries to find patterns or clusters in data without having correct labels.</p>
-
-        <h4>Reinforcement Learning</h4>
-
-        <p>An AI system learns by interacting with the environment and receiving rewards and punishments.</p>
-
-        <p>This approach can be used in gaming and robotics.</p>
-
-        <hr>
-
-        <h2 id="section-6">6. Deep Learning</h2>
-
-        <img src="deep-learning-neural-networks-multiple-layers.1.2.jpg" alt="Deep Neural Network Diagram" class="blog-img">
-
-        <p>Deep Learning is a specialized branch of machine learning. It uses artificial neural networks with many layers.</p>
-
-        <p>Neural network can be represented in a simplified form as:</p>
-
-        <blockquote>Input -&gt; Hidden Layers -&gt; Output</blockquote>
-
-        <p>For example, in the case of an image recognition system, the system receives an image as an input and gradually analyzes numerical representation of its features before producing an output.</p>
-
-        <p>Deep learning became especially powerful because modern systems can train on huge datasets using powerful hardware.</p>
-
-        <p>Deep learning powers a lot of technologies related to:</p>
-
-        <ul>
-          <li>Computer vision</li>
-          <li>Speech recognition</li>
-          <li>Natural language processing</li>
-          <li>Generative AI</li>
-          <li>Autonomous systems</li>
-        </ul>
-
-        <p>Generative AI uses neural network architecture with millions of learned parameters.</p>
-
-        <hr>
-
-        <h2 id="section-7">7. State-of-the-Art AI and Frameworks</h2>
-
-        <p>AI continues to develop at a very rapid pace.</p>
-
-        <p>Modern AI systems include large language models, multimodal models, generative AI, computer vision systems, robotics models, AI agents and others.</p>
-
-        <p>Some modern AI systems are able to work with several types of data simultaneously, such as:</p>
-
-        <blockquote>Text + Images + Audio + Video</blockquote>
-
-        <p>AI developers use special software frameworks and libraries to build these systems.</p>
-
-        <p>Examples of these frameworks and libraries include:</p>
-
-        <ul>
-          <li>PyTorch</li>
-          <li>TensorFlow</li>
-          <li>Keras</li>
-          <li>scikit-learn</li>
-        </ul>
-
-        <p>They provide developers with building blocks to build, train, test and deploy machine learning models.</p>
-
-        <p>State-of-the-art AI is not only about creating the biggest model. The researchers also pay attention to:</p>
-
-        <ul>
-          <li>Accuracy</li>
-          <li>Efficiency</li>
-          <li>Reliability</li>
-          <li>Safety</li>
-          <li>Reasoning ability</li>
-          <li>Cost</li>
-          <li>Energy consumption</li>
-          <li>Ability to work with different types of data</li>
-        </ul>
-
-        <p>So, AI research is a mix of computer science, mathematics, engineering and science experiments.</p>
-
-        <hr>
-
-        <h2 id="section-8">8. Real-World Applications of Artificial Intelligence</h2>
-
-        <img src="ai-applications.png" alt="Real World Applications of AI Collage" class="blog-img">
-
-        <p>Artificial Intelligence is used in many fields of our society now.</p>
-
-        <div class="grid-cards">
-          <div class="card">
-            <h4>🏥 Healthcare</h4>
-            <p>AI systems can help in analyzing medical images, working with researchers and clinical decision-making.</p>
-          </div>
-          <div class="card">
-            <h4>🚗 Transportation</h4>
-            <p>AI systems can be used for navigation, traffic prediction, assistance to drivers and autonomous cars.</p>
-          </div>
-          <div class="card">
-            <h4>🎮 Gaming</h4>
-            <p>AI is responsible for behavior of non-player characters, adaptive difficulty and detection of cheating in games.</p>
-            <p>AI can help developers to create game content.</p>
-          </div>
-          <div class="card">
-            <h4>📱 Smartphones</h4>
-            <p>AI provides the functionality of voice assistants, camera processing, facial recognition, translations and text predictions.</p>
-          </div>
-          <div class="card">
-            <h4>🎬 Entertainment</h4>
-            <p>AI systems of streaming services make movie and show recommendations based on user's behavior.</p>
-          </div>
-          <div class="card">
-            <h4>💰 Finance</h4>
-            <p>AI can help in detecting abnormal transactions, analyzing financial data and automating different processes.</p>
-          </div>
-          <div class="card">
-            <h4>🌾 Agriculture</h4>
-            <p>AI can help in analyzing crops, detecting diseases of plants and monitoring farms.</p>
-          </div>
-          <div class="card">
-            <h4>🎓 Education</h4>
-            <p>AI can personalize the learning experience for students, generate practice questions and explain concepts to them.</p>
-          </div>
-        </div>
-
-        <hr>
-
-        <h2 id="section-9">9. Conclusion</h2>
-
-        <p>Artificial Intelligence may seem very complicated, but its basics can be connected to the concepts that can be encountered by high school students.</p>
-
-        <p>Programming gives the instructions and the tools.</p>
-
-        <p>Mathematics gives the language and methods for representation and optimization of models.</p>
-
-        <p>Machine learning enables computers to learn from data.</p>
-
-        <p>Deep learning uses neural networks with many layers to solve more and more complicated problems.</p>
-
-        <p>And state-of-the-art AI combines these concepts with huge amounts of data, powerful computing resources and advanced algorithms.</p>
-
-        <p>It does not mean that you need to become an AI expert immediately. A high school student can start from basics:</p>
-
-        <blockquote>Learn Mathematics -&gt; Learn Python -&gt; Learn About Data -&gt; Learn Machine Learning -&gt; Learn Deep Learning -&gt; AI Projects</blockquote>
-
-        <p>Artificial Intelligence is not only a technology of the future. It is already a part of our present, and students understanding basics of AI can become the shapers of its future.</p>
-      </article>
-    </main>
-  </div>
-
-  <footer>
-    <p>&copy; 2026 AI Learning Hub by Jarius Vladymir M. De Leon. Built for educational purposes.</p>
-  </footer>
-
-  <script>
-    // Theme Switcher Logic
-    const toggleBtn = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme');
-
-    if (currentTheme) {
-      document.documentElement.setAttribute('data-theme', currentTheme);
-      if (currentTheme === 'dark') {
-        toggleBtn.textContent = '☀️ Light Mode';
-      }
-    }
-
-    toggleBtn.addEventListener('click', () => {
-      let theme = document.documentElement.getAttribute('data-theme');
-      if (theme === 'dark') {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-        toggleBtn.textContent = '🌙 Dark Mode';
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        toggleBtn.textContent = '☀️ Light Mode';
-      }
-    });
-
-    // Scroll Reading Progress Bar
-    window.addEventListener('scroll', () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById('progress-bar').style.width = scrolled + '%';
-    });
-
-    // Copy Link Logic
-    const copyBtn = document.getElementById('copy-link-btn');
-    const copyAlert = document.getElementById('copy-alert');
-
-    copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText(window.location.href).then(() => {
-        copyAlert.style.display = 'block';
-        setTimeout(() => {
-          copyAlert.style.display = 'none';
-        }, 3000);
-      }).catch(err => {
-        alert("Failed to copy link");
-      });
-    });
-  </script>
-</body>
-</html>
+        <p>Matrices are especially important because very large am
