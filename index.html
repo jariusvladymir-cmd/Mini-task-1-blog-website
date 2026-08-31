@@ -122,6 +122,9 @@
       height: fit-content;
       max-height: calc(100vh - 6rem);
       overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
     }
 
     .toc-card {
@@ -181,6 +184,25 @@
       font-size: 1.2rem;
       color: var(--accent-color);
       font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .article-meta {
+      font-size: 0.9rem;
+      color: var(--text-color);
+      opacity: 0.85;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .blog-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      margin: 1.5rem 0;
+      display: block;
     }
 
     h2 {
@@ -272,6 +294,53 @@
       margin-bottom: 0;
     }
 
+    .share-section {
+      background: var(--quote-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .share-section h4 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+
+    .share-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .share-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-color);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.875rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    .share-btn:hover {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+
+    .copy-alert {
+      display: none;
+      font-size: 0.85rem;
+      color: var(--accent-color);
+      margin-top: 0.5rem;
+    }
+
     hr {
       border: none;
       border-top: 1px solid var(--border-color);
@@ -333,6 +402,17 @@
           <li><a href="#section-9">9. Conclusion</a></li>
         </ul>
       </div>
+
+      <div class="share-section">
+        <h4>Share This Blog:</h4>
+        <div class="share-buttons">
+          <a class="share-btn" href="https://twitter.com/intent/tweet?text=Check%20out%20this%20blog%20on%20AI%20for%20High%20School%20Students!" target="_blank" rel="noopener">🌐 Twitter / X</a>
+          <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php" target="_blank" rel="noopener">📘 Facebook</a>
+          <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/" target="_blank" rel="noopener">💼 LinkedIn</a>
+          <button class="share-btn" id="copy-link-btn">🔗 Copy Link</button>
+        </div>
+        <div class="copy-alert" id="copy-alert">✓ Link copied to clipboard!</div>
+      </div>
     </aside>
 
     <main>
@@ -340,7 +420,13 @@
         <div class="article-header">
           <h1 class="article-title">Artificial Intelligence Explanation for High School Students</h1>
           <div class="article-subtitle">From Python and Mathematics to Machine Learning and Practical AI</div>
+          <div class="article-meta">
+            <span>✍️ <strong>Blog By Jarius Vladymir M. De Leon</strong></span>
+            <span>📅 <strong>Date Released: Aug 30 2026</strong></span>
+          </div>
         </div>
+
+        <img src="AI-text-to-image-photo-robot-with-computer.jpg" alt="AI Introduction Hero Image" class="blog-img">
 
         <p>Artificial Intelligence, or AI, is one of the most revolutionary technologies of our time. You can find AI on phones, social networks, search engines, video games, recommendations systems, cars and in other places.</p>
 
@@ -374,6 +460,8 @@
 
         <h2 id="section-2">2. Key Concepts of Artificial Intelligence</h2>
 
+        <img src="images.jpeg" alt="AI Basic Workflow Diagram" class="blog-img">
+
         <p>Before learning AI itself, we need to understand some basics.</p>
 
         <h4>Data</h4>
@@ -398,6 +486,8 @@
 
         <h2 id="section-3">3. Programming Basics: Python</h2>
 
+        <img src="images (1).jpeg" alt="Python Code Example" class="blog-img">
+
         <p>Programming is one of the key skills needed to work with AI systems.</p>
 
         <p>One of the most popular programming languages in the field of AI is Python due to simple syntax and numerous libraries dealing with mathematics, data and machine learning.</p>
@@ -420,6 +510,8 @@ print(result)</code></pre>
         <hr>
 
         <h2 id="section-4">4. Mathematics Behind Artificial Intelligence</h2>
+
+        <img src="Gja5qmLbMAAq1b4.jpg" alt="Mathematics for Artificial Intelligence" class="blog-img">
 
         <p>Mathematics is one of the foundations of AI.</p>
 
@@ -503,6 +595,8 @@ print(result)</code></pre>
 
         <h2 id="section-5">5. Machine Learning</h2>
 
+        <img src="1_rbaxTrB_CZCqbty_zv2bEg.png" alt="Machine Learning Workflow Taxonomy" class="blog-img">
+
         <p>Machine Learning (ML) is a branch of Artificial Intelligence.</p>
 
         <p>Instead of hard-coding all the rules, machine learning systems are able to learn patterns from data.</p>
@@ -542,6 +636,8 @@ print(result)</code></pre>
         <hr>
 
         <h2 id="section-6">6. Deep Learning</h2>
+
+        <img src="deep-learning-neural-networks-multiple-layers.1.2.jpg" alt="Deep Neural Network Diagram" class="blog-img">
 
         <p>Deep Learning is a specialized branch of machine learning. It uses artificial neural networks with many layers.</p>
 
@@ -609,6 +705,8 @@ print(result)</code></pre>
 
         <h2 id="section-8">8. Real-World Applications of Artificial Intelligence</h2>
 
+        <img src="ai-applications.png" alt="Real World Applications of AI Collage" class="blog-img">
+
         <p>Artificial Intelligence is used in many fields of our society now.</p>
 
         <div class="grid-cards">
@@ -673,7 +771,7 @@ print(result)</code></pre>
   </div>
 
   <footer>
-    <p>&copy; 2026 AI Learning Hub. Built for educational purposes.</p>
+    <p>&copy; 2026 AI Learning Hub by Jarius Vladymir M. De Leon. Built for educational purposes.</p>
   </footer>
 
   <script>
@@ -707,6 +805,21 @@ print(result)</code></pre>
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const scrolled = (winScroll / height) * 100;
       document.getElementById('progress-bar').style.width = scrolled + '%';
+    });
+
+    // Copy Link Logic
+    const copyBtn = document.getElementById('copy-link-btn');
+    const copyAlert = document.getElementById('copy-alert');
+
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        copyAlert.style.display = 'block';
+        setTimeout(() => {
+          copyAlert.style.display = 'none';
+        }, 3000);
+      }).catch(err => {
+        alert("Failed to copy link");
+      });
     });
   </script>
 </body>
