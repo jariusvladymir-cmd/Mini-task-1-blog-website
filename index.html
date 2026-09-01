@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Artificial Intelligence Explanation for High School Students</title>
-    <!-- Website Favicon -->
-      <link rel="icon" type="image/png" href="file_000000002d4c820b8a7934694df49282.png">
+  <link rel="icon" type="image/png" href="file_000000002d4c820b8a7934694df49282.png">
   <script>
     MathJax = {
       tex: {
@@ -92,11 +91,51 @@
       height: 100%;
     }
 
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* 3-Line Hamburger Menu Toggle Button */
+    .menu-toggle {
+      background: none;
+      border: 1px solid var(--border-color);
+      color: var(--heading-color);
+      font-size: 1.2rem;
+      padding: 0.1rem 0.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      transition: all 0.2s;
+    }
+
+    .menu-toggle:hover {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .site-logo-img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
     .logo {
       font-weight: 700;
       font-size: 1.1rem;
       color: var(--heading-color);
-      text-decoration: none;
     }
 
     .theme-toggle {
@@ -127,6 +166,13 @@
       height: calc(100vh - 50px);
       height: calc(100dvh - 50px);
       box-sizing: border-box;
+      transition: grid-template-columns 0.3s ease;
+    }
+
+    /* Layout state when sidebar is collapsed */
+    .layout.sidebar-hidden {
+      grid-template-columns: 0px 1fr;
+      gap: 0;
     }
 
     aside {
@@ -139,6 +185,14 @@
       gap: 0.5rem;
       padding-right: 0.2rem;
       padding-bottom: 2rem;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    .layout.sidebar-hidden aside {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      padding: 0;
     }
 
     main {
@@ -421,6 +475,10 @@
         height: calc(100dvh - 50px);
         padding: 0.25rem;
       }
+      .layout.sidebar-hidden {
+        grid-template-columns: 0px 1fr;
+        gap: 0;
+      }
       aside {
         display: flex;
         flex-direction: column;
@@ -470,13 +528,19 @@
 
   <header>
     <div class="nav-container">
-      <a href="#" class="logo">AI Learning Hub</a>
+      <div class="nav-left">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Sidebar">☰</button>
+        <a href="#" class="logo-container">
+          <img src="file_000000002d4c820b8a7934694df49282.png" alt="AI Learning Hub Logo" class="site-logo-img">
+          <span class="logo">AI Learning Hub</span>
+        </a>
+      </div>
       <button class="theme-toggle" id="theme-toggle">🌙 Dark Mode</button>
     </div>
   </header>
 
-  <div class="layout">
-    <aside>
+  <div class="layout" id="main-layout">
+    <aside id="sidebar">
       <div class="sidebar-card">
         <h3>Table of Contents</h3>
         <ul>
@@ -924,6 +988,14 @@ print(result)</code></pre>
         localStorage.setItem('theme', 'dark');
         toggleBtn.textContent = '☀️ Light Mode';
       }
+    });
+
+    // 3-Line Menu Toggle Sidebar Logic
+    const menuToggleBtn = document.getElementById('menu-toggle');
+    const mainLayout = document.getElementById('main-layout');
+
+    menuToggleBtn.addEventListener('click', () => {
+      mainLayout.classList.toggle('sidebar-hidden');
     });
 
     // Scroll Reading Progress Bar calculation
