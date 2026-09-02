@@ -19,7 +19,7 @@ This blog serves as an educational introduction that connects high school concep
 
 📚 Blog Content Outline
 * What is AI? – Introduction to AI and common examples of AI.
-* Key Concepts – Workflow explanation: Data \rightarrow Training \rightarrow Model \rightarrow Prediction.
+* Key Concepts – Workflow explanation: Data -> Training -> Model -> Prediction.
 * Programming Basics (Python) – Basic programming in python.
 * Math Behind AI – Math concepts used in AI:
   * Linear Algebra (Vectors and Matrices)
