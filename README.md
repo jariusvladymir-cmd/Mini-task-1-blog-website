@@ -55,12 +55,15 @@ cd Mini-task-2-blog-website
 * View the index.html file using any modern web browser or VS Code Live Server extension.
 
 📄 Credits & Acknowledgments
+
 I would like to give special thanks to the online education platforms for their great free university courses which were used in this blog:
 * Harvard University (CS50 Series)
 * Massachusetts Institute of Technology (MIT OCW)
 * Stanford University (CS221, CS229, CS231n, CS224n)
 * University of Helsinki (Elements of AI)
-© 2026 AI Learning Hub by Jarius Vladymir M. De Leon
+
+ © 2026 AI Learning Hub by Jarius Vladymir M. De Leon
 
 ⚠️ Notice
+
 (This blog website was vibe-coded using Gemini 3.6 Flash with careful planning, drafting, and writing.)
