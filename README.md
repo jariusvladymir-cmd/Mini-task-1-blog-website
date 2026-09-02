@@ -1,10 +1,12 @@
-🤖 AI Learning Hub — Mini Task 2 Blog Website
+![AI Learning Hub Logo](file_000000002d4c820b8a7934694df49282.png)
+---
+# 🤖 AI Learning Hub — Mini Task 2 Blog Website
 
 Welcome to the AI Learning Hub! The website serves as an educational blog that demystifies AI, ML, and Math concepts by making them understandable for high school students.
 
 🔗 Live Website: https://jariusvladymir-cmd.github.io/Mini-task-2-blog-website/
 
-📌 Project Overview
+## 📌 Project Overview ##
 
 This blog serves as an educational introduction that connects high school concepts such as python, calculus, probability, linear algebra, to real-world AI applications.
 
@@ -63,7 +65,7 @@ I would like to give special thanks to the online education platforms for their 
 * University of Helsinki (Elements of AI)
 
  © 2026 AI Learning Hub by Jarius Vladymir M. De Leon
-
+---
 ⚠️ Notice
 
 (This blog website was vibe-coded using Gemini 3.6 Flash with careful planning, drafting, and writing.)
